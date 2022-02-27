@@ -1,20 +1,20 @@
 import * as React from 'react';
 import * as RN from 'react-native';
 
-class MyCalendar extends React.Component {
-    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+export default class MyCalendar extends React.Component {
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-    weekDays =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-    nDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  nDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    state = {
-      activeDate: new Date()
-    };
-    render() {
-      let matrix = this.generateMatrix();
-      let rows = matrix.map((row, rowIndex) => {
-      let rowItems = row.map((item, colIndex) => {
+  state = {
+    activeDate: new Date()
+  };
+  render() {
+    let matrix = this.generateMatrix();
+    let rows = matrix.map((row, rowIndex) => {
+      var rowItems = row.map((item, colIndex) => {
         return (
           <RN.Text style={{
             flex: 1,
@@ -22,29 +22,27 @@ class MyCalendar extends React.Component {
             textAlign: 'center',
             backgroundColor: rowIndex == 0 ? '#ddd' : '#fff',
             color: colIndex == 0 ? 'a00' : '000',
-            fontWeight: item == state.activeDate.getDate() ? 'bold' : '',
+            fontWeight: item == this.state.activeDate.getDate() ? 'bold' : '',
           }}> {item != -1 ? item : ''} </RN.Text>
         )
       })
+      return (
+        <RN.View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            padding: 15,
+            justifyContent: 'space-around',
+            alignItems: 'center',
+          }}>{rowItems}</RN.View>
+      )
     })
-    return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          padding: 15,
-          justifyContent: 'space-around',
-          alignItems: 'center',
-        }}>{rowItems}</View>
-    )
   }
 
-   generateMatrix() {
+  generateMatrix() {
     let matrix = []
-    let rows = []
-    let rowItems = []
+    matrix[0] = this.weekDays
 
-    matrix[0] = weekDays
     let year = this.state.activeDate.getFullYear()
     let month = this.state.activeDate.getMonth()
 
@@ -57,9 +55,9 @@ class MyCalendar extends React.Component {
     }
 
     let counter = 1
-    for (let row=1; row < 7; row++) {
+    for (let row = 1; row < 7; row++) {
       matrix[row] = []
-      for (let col=0; col < 7; col++) {
+      for (let col = 0; col < 7; col++) {
         matrix[row][col] = -1
         if (row == 1 && col >= firstDay) {
           matrix[row][col] = counter++

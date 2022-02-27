@@ -11,6 +11,7 @@ import type {Node} from 'react';
 
 
 import {
+  Dimensions,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -58,6 +59,9 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+
+
+  console.log(Dimensions.get('screen'))
   const isDarkMode = true; //useColorScheme() === 'dark';
 
  
@@ -76,12 +80,7 @@ const App: () => Node = () => {
           }}>
           <Image source={require("./assets/kour7rcm.bmp")}></Image>
           <Image source={{uri: "https://picsum.photos/200/300", width: 200, height:200}}></Image>
-          <Section title="Step One">
-            <Text style={{ fontWeight: 'bold', fontSize: 18, textAlign: 'center'}}>
-              {months[state.activeDate.getMonth()]} &nbsp;
-              {state.activeDate.getFullYear()}
-            </Text>
-            <MyCalendar/>
+          <Section>
           </Section>
         </View>
       </ScrollView>
