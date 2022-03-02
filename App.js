@@ -1,110 +1,51 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
+import { View, Text} from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
+import MessageScreen from './app/screens/MessageScreen';
+import CalendarScreen from './app/screens/CalendarScreen';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 
+import AppText from './app/components/AppText';
+import Card from './app/components/Card';
+import Icon from './app/components/Icon';
+import Screen from './app/components/Screen';
+import ListItem from './app/components/ListItem';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 
-import {
-  Dimensions,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  Image,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import {MyCalendar} from './MyCalendar';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = true; //useColorScheme() === 'dark';
+export default function App() {
+  return (<ListingsScreen/>)
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      <AppText>I love react</AppText>
+      <View style={{
+        backgroundColor: "dodgerblue",
+        width:100,
+        height:100,
+        borderWidth: 4,
+        borderColor: "royalblue",
+        borderRadius:10,
+        borderTopWidth: 10,
+        borderTopLeftRadius: 20,
+        elevation: 20,
+        padding: 20,
+      }}>
+        <View style={{
+          backgroundColor: "gold",
+          width:50,
+          height:50,
+
+        }}
+      ></View>
+      </View>
+      <View style={{
+        backgroundColor: "tomato",
+        width:100,
+        height:100,
+        margin:20,
+      }}></View>
     </View>
-  );
-};
+  )
 
-const App: () => Node = () => {
-
-
-  console.log(Dimensions.get('screen'))
-  const isDarkMode = true; //useColorScheme() === 'dark';
-
- 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Image source={require("./assets/kour7rcm.bmp")}></Image>
-          <Image source={{uri: "https://picsum.photos/200/300", width: 200, height:200}}></Image>
-          <Section>
-          </Section>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+}
