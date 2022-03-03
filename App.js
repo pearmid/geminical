@@ -1,16 +1,20 @@
-import React from 'react';
-import { View, Text} from 'react-native';
+import React, {useState} from 'react';
+import { View, Text, TextInput} from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessageScreen from './app/screens/MessageScreen';
 import CalendarScreen from './app/screens/CalendarScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import AccountScreen from './app/screens/AccountScreen';
 
 import AppText from './app/components/AppText';
 import Card from './app/components/Card';
 import Icon from './app/components/Icon';
 import Screen from './app/components/Screen';
 import ListItem from './app/components/ListItem';
+import AppTextInput from './app/components/AppTextInput';
+
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import LoginScreen from './app/screens/LoginScreen';
