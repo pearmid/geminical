@@ -6,6 +6,7 @@ import MessageScreen from './app/screens/MessageScreen';
 import CalendarScreen from './app/screens/CalendarScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
+import LoginScreen from './app/screens/LoginScreen';
 import AccountScreen from './app/screens/AccountScreen';
 
 import AppText from './app/components/AppText';
@@ -15,9 +16,6 @@ import Screen from './app/components/Screen';
 import ListItem from './app/components/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 
-import AccountScreen from './app/screens/AccountScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
-import LoginScreen from './app/screens/LoginScreen';
 
 export default function App() {
   return (<LoginScreen/>)
