@@ -13,9 +13,10 @@ import Screen from './app/components/Screen';
 import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
+import LoginScreen from './app/screens/LoginScreen';
 
 export default function App() {
-  return (<ListingsScreen/>)
+  return (<LoginScreen/>)
   return (
     <View>
       <AppText>I love react</AppText>
