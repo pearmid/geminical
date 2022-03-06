@@ -1,6 +1,4 @@
 {
   "name": "test",
-  "displayName": "test",
-  "icon": "./assets/icon.png",
-  "orientation": "default"
+  "displayName": "test"
 }

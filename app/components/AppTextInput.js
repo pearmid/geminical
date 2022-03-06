@@ -4,16 +4,17 @@ import {Icon} from 'react-native-elements';
 
 import colors from '../config/colors';
 
-function AppTextInput({icon, ...otherProps}) {
+function AppTextInput({icon, width="100%", ...otherProps}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
         { icon && <Icon 
             name={icon}
             size={40}
             color={colors.medium}
             style={styles.icon}
          /> }
-        <TextInput style={styles.textInput} {...otherProps}></TextInput>
+        <TextInput 
+            placeholderTextColor={colors.medium} style={styles.textInput} {...otherProps}></TextInput>
     </View>
   )
 }
@@ -21,9 +22,8 @@ function AppTextInput({icon, ...otherProps}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.light,
-        borderRadius: 25,
+        borderRadius: 50,
         flexDirection: "row",
-        width: '100%',
         padding: 15,
         alignItems: "center",
         marginVertical: 10,

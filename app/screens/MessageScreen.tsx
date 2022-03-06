@@ -35,6 +35,7 @@ function MessageScreen() {
             keyExtractor={message => message.id.toString()}
             renderItem={({item}) =>
                 <ListItem
+                    chevrons
                     title={item.title}
                     subTitle={item.description}
                     image={item.image}
