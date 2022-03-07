@@ -20,7 +20,7 @@ function CalendarItem({title, time, subTitle: description, onPress, color = "pri
 const styles = StyleSheet.create({
     button: {
         backgroundColor: colors.primary,
-        borderRadius: 25,
+        borderRadius: 10,
         flex: 1,
         justifyContent: 'center',
         marginVertical: 1,
@@ -28,16 +28,16 @@ const styles = StyleSheet.create({
     },
     title: {
         color: colors.white,
-        fontSize: 18,
+        fontSize: 12,
         fontWeight: 'bold',
         textTransform: 'uppercase',
     },
     time: {
         color: colors.white,
-        fontSize: 18,
+        fontSize: 12,
         fontWeight: 'bold',
-        paddingRight: 15,
-        paddingLeft: 25,
+        paddingRight: 5,
+        paddingLeft: 5,
     },
     description: {
         color: colors.white,

@@ -20,12 +20,27 @@ function CalendarScreen(props) {
                     description: "Get to bed...,",
                     color: 'secondary'
                 },
+                {
+                    _id: 3,
+                    event: "Go to bed",
+                    time: "20:00",
+                    description: "Get to bed...,",
+                    color: 'secondary'
+                },
+                {
+                    _id: 4,
+                    event: "Go to work",
+                    time: "07:00",
+                    description: "Get to work..,",
+                    color: 'secondary'
+                },
     ]
     return (
         <Screen>
             <View style={styles.container}>
                 <FlatList 
                     data={calendarItems}
+                    numColumns={3}
                     keyExtractor={item => item._id.toString()}
                     renderItem={({ item }) =>
                     <CalendarItem

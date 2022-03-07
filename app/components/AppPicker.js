@@ -54,7 +54,7 @@ function AppPicker({
                         label={item.label}
                         onPress={() => {
                             setModalVisible(false);
-                            onSelectItem(item)
+                            
                         }}
                     />
             }
