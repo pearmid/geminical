@@ -4,6 +4,7 @@ import {View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../config/colors'
 
 function CalendarItem({title, time, subTitle: description, onPress, color = "primary"}){
+    console.log("CI: " + title + description + time);
     return (
         <TouchableOpacity style={[styles.button, {backgroundColor: colors[color]}]} onPress={onPress}>
             <View style={{flexDirection: "row"}} >
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     title: {
-        color: colors.white,
+        color: colors.black,
         fontSize: 12,
         fontWeight: 'bold',
         textTransform: 'uppercase',
